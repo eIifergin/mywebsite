@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Registration Page</title>
+    <style>
+        .header {
+            font-size: 45px;
+            background-color: darkred;
+            color: white;
+        }
+
+        body {
+            text-align: center;
+            background-color: darkgreen;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h2 class="header">Please write your username and password to blanks</h2>
+    <hr>
+    <form id="login-form">
+        <input type="text" name="username" id="username-field" class="login-form-field" placeholder="Username">
+        <input type="password" name="password" id="password-field" class="login-form-field" placeholder="Password">
+    </form>
+
+    <input type="button" value="Login" id="Submit" onclick="validate()" />
+    <input type="button" value="Cancel" id="cancel" onclick="cancelmessage()" /> <br>
+
+    <script>
+
+        function cancelmessage() {
+            alert("Please back to the log in page");
+        }
+
+        function validate() {
+
+            var un = document.getElementById("username-field").value;
+
+            var pw = document.getElementById("password-field").value;
+
+            var valid = false;
+
+            var invalid = true;
+
+            var unArray = ["elifergin", "hilmiorcun", "erenaykin"];
+
+            var pwArray = ["123elf.a", "1benc_23", "ceee4-56"];
+
+            for (var i = 0; i < unArray.length; i++) {
+
+                if ((un == unArray[i]) && (pw == pwArray[i])) {
+
+                    valid = true;
+                }
+            }
+
+            if (valid) {
+
+               <!-- alert("Access is Granted");-->
+                location.href = "content.html";
+                return false;
+            }
+            else
+                if (invalid) {
+
+                    alert("Error! Your username or password is wrong!");
+                    return true;
+                }
+        }
+
+    </script>
+
+</body>
+
+</html>
